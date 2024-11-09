@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecordManagement.Models;
 
@@ -14,4 +15,10 @@ public class Employee
     public string PhoneNumber { get; set; }
     public string Address { get; set; }
     public bool IsActive { get; set; }
+
+    //Relationship with Department
+    [ForeignKey("Department")]
+    public int DepartmentId { get; set; }
+    public Department Department { get; set; }
+
 }
