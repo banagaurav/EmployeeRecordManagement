@@ -2,9 +2,8 @@ using RecordManagement.Data;
 using RecordManagement.Models;
 using RecordManagement.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using RecordManagement.Repositories;
 
-namespace EFCoreWithAsp.netCore.Repositories
+namespace RecordManagement.Repositories
 {
     public class DepartmentRepository : IDepartmentRepository
     {
