@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RecordManagement.ViewModels;
 
 namespace RecordManagement.Controllers
 {
@@ -10,7 +11,15 @@ namespace RecordManagement.Controllers
             return View();
         }
 
+        //Get: Employee/Add
         public IActionResult Add()
+        {
+            return View();
+        }
+
+        //POST: Employee/Add
+        [HttpPost]
+        public IActionResult Add(EmployeeViewModel model)
         {
             return View();
         }
