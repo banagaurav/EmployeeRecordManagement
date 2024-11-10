@@ -2,6 +2,7 @@ using RecordManagement.Data;
 using RecordManagement.Models;
 using RecordManagement.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using RecordManagement.Repositories;
 
 namespace EFCoreWithAsp.netCore.Repositories
 {
