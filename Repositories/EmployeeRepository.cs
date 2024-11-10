@@ -58,49 +58,49 @@ namespace EFCoreWithAsp.netCore.Repositories
             return employees;
         }
 
-        //public IQueryable<EmployeeViewModel>GetAllAsync()
-        //{
-        //    //List<Employee> employees =  _dbContext.Employees.ToListAsync();
-        //    //List<EmployeeViewModel> employeeViewModels = new List<EmployeeViewModel>();
+        public IQueryable<EmployeeViewModel> GetAllAsync()
+        {
+            List<Employee> employees = _dbContext.Employees.ToListAsync();
+            List<EmployeeViewModel> employeeViewModels = new List<EmployeeViewModel>();
 
-        //    //foreach (var employee in employees)
-        //    //{
-        //    //    var employeeViewModel = new EmployeeViewModel
-        //    //    {
-        //    //        EmployeeId = employee.EmployeeId,
-        //    //        FirstName = employee.FirstName,
-        //    //        LastName = employee.LastName,
-        //    //        DateOfBirth = employee.DateOfBirth,
-        //    //        Gender = employee.Gender,
-        //    //        Email = employee.Email,
-        //    //        PhoneNumber = employee.PhoneNumber,
-        //    //        Address = employee.Address,
-        //    //        IsActive = employee.IsActive,
-        //    //        DepartmentId = employee.DepartmentId
-        //    //    };
+            foreach (var employee in employees)
+            {
+                var employeeViewModel = new EmployeeViewModel
+                {
+                    EmployeeId = employee.EmployeeId,
+                    FirstName = employee.FirstName,
+                    LastName = employee.LastName,
+                    DateOfBirth = employee.DateOfBirth,
+                    Gender = employee.Gender,
+                    Email = employee.Email,
+                    PhoneNumber = employee.PhoneNumber,
+                    Address = employee.Address,
+                    IsActive = employee.IsActive,
+                    DepartmentId = employee.DepartmentId
+                };
 
-        //    //    employeeViewModels.Add(employeeViewModel);
-        //    //}
+                employeeViewModels.Add(employeeViewModel);
+            }
 
-        //    //return employeeViewModels;
+            return employeeViewModels;
 
-        //var employees = _dbContext.Employees
-        //.Select(e => new EmployeeViewModel
-        //{
-        //    EmployeeId = e.EmployeeId,
-        //    FirstName = e.FirstName,
-        //    LastName = e.LastName,
-        //    DateOfBirth = e.DateOfBirth,
-        //    Gender = e.Gender,
-        //    Email = e.Email,
-        //    PhoneNumber = e.PhoneNumber,
-        //    Address = e.Address,
-        //    IsActive = e.IsActive,
-        //    DepartmentId = e.DepartmentId
-        //});
+            var employees = _dbContext.Employees
+            .Select(e => new EmployeeViewModel
+            {
+                EmployeeId = e.EmployeeId,
+                FirstName = e.FirstName,
+                LastName = e.LastName,
+                DateOfBirth = e.DateOfBirth,
+                Gender = e.Gender,
+                Email = e.Email,
+                PhoneNumber = e.PhoneNumber,
+                Address = e.Address,
+                IsActive = e.IsActive,
+                DepartmentId = e.DepartmentId
+            });
 
-        //    return employees;
-        //}
+            return employees;
+        }
 
         public async Task<EmployeeViewModel> GetByIdAsync(int id)
         {

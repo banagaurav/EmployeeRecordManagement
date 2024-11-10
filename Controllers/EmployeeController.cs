@@ -12,6 +12,7 @@ namespace RecordManagement.Controllers
         }
 
         //Get: Employee/Add
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
@@ -21,7 +22,10 @@ namespace RecordManagement.Controllers
         [HttpPost]
         public IActionResult Add(EmployeeViewModel model)
         {
-            return View();
+            if (!ModelStat.IsValid)
+            {
+                return View(model);
+            }
         }
 
     }

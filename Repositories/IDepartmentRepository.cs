@@ -1,11 +1,14 @@
 using RecordManagement.Models;
-namespace RecordManagement.Repositories;
+using RecordManagement.ViewModels;
 
-public interface IDepartmentRepository
+namespace EFCoreWithAsp.netCore.Repositories
 {
-    Task<Department> GetByIdAsync(int id);
-    Task<List<Department>> GetAllAsync();
-    Task AddAsync(Department department);
-    Task UpdateAsync(Department department);
-    Task DeleteAsync(int Id);
+    public interface IDepartmentRepository
+    {
+        Task<DepartmentViewModel> GetByIdAsync(int id);
+        Task<List<DepartmentViewModel>> GetAllAsync();
+        Task AddAsync(DepartmentViewModel department);
+        Task UpdateAsync(DepartmentViewModel department);
+        Task DeleteAsync(int Id);
+    }
 }
