@@ -1,5 +1,7 @@
+using EFCoreWithAsp.netCore.Repositories;
 using Microsoft.EntityFrameworkCore;
 using RecordManagement.Data;
+using RecordManagement.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,12 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 
 // builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+//Register Department Service
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+//Register Employee Service
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 var app = builder.Build();
 
