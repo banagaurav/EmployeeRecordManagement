@@ -22,10 +22,13 @@ namespace RecordManagement.Controllers
         [HttpPost]
         public IActionResult Add(EmployeeViewModel model)
         {
-            if (!ModelStat.IsValid)
+            if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(model); // return to the form with validation errors
             }
+
+            //Insert data in database
+            return View(model);
         }
 
     }
