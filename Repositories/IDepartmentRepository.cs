@@ -1,7 +1,7 @@
 using RecordManagement.Models;
 using RecordManagement.ViewModels;
 
-namespace EFCoreWithAsp.netCore.Repositories
+namespace RecordManagement.Repositories
 {
     public interface IDepartmentRepository
     {
